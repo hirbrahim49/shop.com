@@ -5,7 +5,6 @@ import Link from "next/link"; // Import Link from next/link
 import { motion } from "framer-motion";
 import { FaShoppingCart } from "react-icons/fa";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
-import { MdContactMail } from "react-icons/md";
 import { useCart } from "../Context/cartContext";
 import { FaWhatsapp } from "react-icons/fa";
 const Navbar = () => {

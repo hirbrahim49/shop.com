@@ -1,6 +1,5 @@
 import React from "react";
 import { HeroCategory } from "../Data/HeroData";
-import Image from "next/image";
 import { MdOutlineStar, MdStarHalf, MdStarBorder } from "react-icons/md";
 import Link from "next/link";
 
