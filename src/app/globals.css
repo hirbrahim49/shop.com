@@ -1,21 +1,91 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes underlineAnimation {
+  0% {
+    transform: scaleX(0); /* Start with the underline hidden */
+    transform-origin: center; /* Start from the middle */
+  }
+  50% {
+    transform: scaleX(1); /* Full width at 50% of the animation */
+  }
+  100% {
+    transform: scaleX(0); /* Shrink the underline back to 0 */
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-underline {
+  animation: underlineAnimation 2s ease-in-out infinite; /* Continuous animation */
+  transform-origin: center; /* Ensure it starts from the middle */
+}
+
+@keyframes bounceLine {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scaleX(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 0.8;
+  }
+}
+
+.animate-bounce-line {
+  animation: bounceLine 1.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes moveAround {
+  0% {
+    background-position: top left;
+  }
+  25% {
+    background-position: top right;
+  }
+  50% {
+    background-position: bottom right;
+  }
+  75% {
+    background-position: bottom left;
+  }
+  100% {
+    background-position: top left;
+  }
+}
+
+/* Animation applied to H1 */
+.border-animation {
+  position: relative;
+  padding: 20px 40px;
+  background-color: white;
+  border: 4px solid transparent;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(
+    to right,
+    orange 0%,
+    yellow 50%,
+    orange 100%
+  );
+  background-size: 300% 300%;
+  animation: moveAround 2s linear infinite;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 12px;
 }
