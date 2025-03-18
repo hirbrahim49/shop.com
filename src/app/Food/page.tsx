@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { data } from "../../../data/products";
+import { data } from "../data/products";
 import { useCart } from "../Context/cartContext";
-import { Product } from "../../../data/products";
+import { Product } from "../data/products";
 const Page = () => {
 
       const { addToCart } = useCart();

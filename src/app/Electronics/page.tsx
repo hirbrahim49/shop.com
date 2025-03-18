@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { data } from "../../../data/products"; // Correcting the import
+import { data } from "../data/products"; // Correcting the import
 import { useCart } from "../Context/cartContext";
-import { Product } from "../../../data/products";
+import { Product } from "../data/products";
 
 const Page = () => {
   const ElectronicProducts = data.find(

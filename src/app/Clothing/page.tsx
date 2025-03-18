@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { data, Product } from "../../../data/products"; // Import your product array and interface
+import { data, Product } from "../data/products"; // Import your product array and interface
 import { useCart } from "../Context/cartContext"; // Adjust the import path
 
 const Page = () => {

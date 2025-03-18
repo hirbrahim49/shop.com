@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { data } from "../../../data/products"; // Importing the correct data variable
+import { data } from "../data/products"; // Importing the correct data variable
 import Image from "next/image";
 import { useCart } from "../Context/cartContext";
-import { Product } from "../../../data/products";
+import { Product } from "../data/products";
 const Page = () => {
     const { addToCart } = useCart();
     // Add to cart handler function

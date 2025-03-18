@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import Slider from "react-slick";
 import Image from "next/image";
-import { HeroDataBase } from "../Data/HeroData";
+import { HeroDataBase } from "../Database/HeroData";
 
 
 const slideVariants = {
