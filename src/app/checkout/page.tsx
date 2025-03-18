@@ -1,11 +1,11 @@
-"use client";
+'use client';
+
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import PaystackCheckout from "../components/PaystackCheckout";
 
 const Checkout: React.FC = () => {
   const searchParams = useSearchParams();
-  const amountFromQuery = searchParams.get("amount");
 
   const [email, setEmail] = useState<string>("");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
@@ -14,10 +14,11 @@ const Checkout: React.FC = () => {
   const [emailError, setEmailError] = useState<string>("");
 
   useEffect(() => {
+    const amountFromQuery = searchParams.get("amount");
     if (amountFromQuery) {
-      setAmount(parseFloat(amountFromQuery)); // Convert string to number
+      setAmount(parseFloat(amountFromQuery));
     }
-  }, [amountFromQuery]);
+  }, [searchParams]);
 
   const validateEmail = (email: string): boolean => {
     const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
