@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { MdOutlineStar, MdStarHalf, MdStarBorder } from "react-icons/md";
 import { heroProducts } from "../Data/HeroData";
