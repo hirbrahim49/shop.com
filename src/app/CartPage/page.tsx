@@ -1,12 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React  from "react";
 import { useCart } from "../Context/cartContext"; // Import the cart context
 import { motion } from "framer-motion"; // Optional animation
 import { useRouter } from "next/navigation"; // For navigation
 
-const page = () => {
+const Page = () => {
   const { cart, removeFromCart, clearCart } = useCart();
-  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  // const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const router = useRouter();
 
   // Calculate total amount outside JSX for clarity
@@ -33,12 +33,12 @@ const page = () => {
         </motion.h1>
       </section>
 
-      {/* Success Message */}
+      {/* Success Message
       {successMessage && (
         <div className="fixed top-0 left-1/2 transform -translate-x-1/2 mt-4 bg-green-500 text-white py-2 px-4 rounded-lg shadow-lg">
           <p>{successMessage}</p>
         </div>
-      )}
+      )} */}
 
       {/* Cart Items Section */}
       <section className="py-8 px-4 w-[90%] mx-auto">
@@ -115,4 +115,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
