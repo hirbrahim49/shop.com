@@ -5,13 +5,13 @@ import { data, Product } from "../../../data/products"; // Import your product a
 import { useCart } from "../Context/cartContext"; // Adjust the import path
 
 const Page = () => {
-  
   // Get the clothing products from the data array
   const clothingProducts = data.find(
     (category) => category.category === "Clothing & Fashion"
   )?.products;
 
   const { addToCart } = useCart();
+
   // Add to cart handler function
   const handleAddToCart = (product: Product) => {
     addToCart(product); // Adds the selected product to the cart

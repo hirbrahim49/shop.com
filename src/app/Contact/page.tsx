@@ -63,6 +63,7 @@ const ClearForm: React.FC = () => {
         setErrorMessage('Information was successfully received. We will get back to you soon!');
       }
     } catch (error) {
+      console.error('Error submitting form:', error); // Log the error
       setErrorMessage('Information was successfully received. We will get back to you soon!');
     } finally {
       setIsSubmitting(false);
@@ -96,7 +97,7 @@ const ClearForm: React.FC = () => {
       >
         <h2 className="text-4xl font-semibold mb-6">Contact Information</h2>
         <p className="text-lg max-w-[700px] mx-auto mb-8">
-          We're here to assist with any questions or concerns you may have about your shopping experience.
+          We&apos;re here to assist with any questions or concerns you may have about your shopping experience.
         </p>
 
         <div className="flex flex-wrap justify-center gap-[40px]">
@@ -111,7 +112,7 @@ const ClearForm: React.FC = () => {
             {
               Icon: FaEnvelope,
               title: 'Email Us',
-              description: "Drop us an email and we'll get back to you shortly.",
+              description: "Drop us an email and we&apos;ll get back to you shortly.",
               link: 'mailto:odeyemiibrahim49@gmail.com',
               linkText: 'odeyemiibrahim49@gmail.com',
             },
@@ -154,7 +155,7 @@ const ClearForm: React.FC = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-semibold text-orange-500">Send Us a Message</h2>
           <p className="text-lg mt-4 max-w-[700px] mx-auto">
-            Have a question or feedback? Fill out the form below and we'll get back to you as soon as possible!
+            Have a question or feedback? Fill out the form below and we&apos;ll get back to you as soon as possible!
           </p>
         </div>
 

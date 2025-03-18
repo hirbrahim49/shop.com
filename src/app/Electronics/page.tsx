@@ -4,16 +4,18 @@ import { motion } from "framer-motion";
 import { data } from "../../../data/products"; // Correcting the import
 import { useCart } from "../Context/cartContext";
 import { Product } from "../../../data/products";
-const page = () => {
+
+const Page = () => {
   const ElectronicProducts = data.find(
     (category) => category.category === "Electronics"
   )?.products;
 
-    const { addToCart } = useCart();
-    // Add to cart handler function
-    const handleAddToCart = (product: Product) => {
-      addToCart(product); // Adds the selected product to the cart
-    }; 
+  const { addToCart } = useCart();
+  // Add to cart handler function
+  const handleAddToCart = (product: Product) => {
+    addToCart(product); // Adds the selected product to the cart
+  }; 
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -81,8 +83,8 @@ const page = () => {
                     </span>
                   </div>
                   <button 
-                   onClick={() => handleAddToCart(product)} // Pass product to addToCart
-                  className="bg-orange-600 text-white py-2 mt-4 w-full rounded-lg hover:bg-orange-500 transition duration-300">
+                    onClick={() => handleAddToCart(product)} // Pass product to addToCart
+                    className="bg-orange-600 text-white py-2 mt-4 w-full rounded-lg hover:bg-orange-500 transition duration-300">
                     Add to Cart
                   </button>
                 </div>
@@ -94,4 +96,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

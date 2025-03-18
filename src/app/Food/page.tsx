@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { data } from "../../../data/products";
 import { useCart } from "../Context/cartContext";
 import { Product } from "../../../data/products";
-const page = () => {
+const Page = () => {
 
       const { addToCart } = useCart();
       // Add to cart handler function
@@ -92,4 +92,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

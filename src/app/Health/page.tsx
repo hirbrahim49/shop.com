@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { data } from "../../../data/products";
 import { Product } from "../../../data/products";
 import { useCart } from "../Context/cartContext";
-const page = () => {
+const Page = () => {
   const healthAndBeautyProducts = data.find(
     (category) => category.category === "Health & Beauty"
   )?.products;
@@ -91,4 +91,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

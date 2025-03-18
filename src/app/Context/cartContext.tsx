@@ -1,8 +1,7 @@
-"use client"
+"use client";
 import React, { createContext, useContext, useState, ReactNode } from "react";
 import { Product } from "../../../data/products";
 
-// Cart item interface that holds a product and its quantity
 export interface CartItem {
   product: Product;
   quantity: number;

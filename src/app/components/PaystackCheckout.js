@@ -1,8 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 const PaystackCheckout = ({ email, amount, phoneNumber, deliveryAddress, isDisabled }) => {
-  const publicKey = "pk_live_f99a4060a01d3d525e695ec18c5c5780435e0e23"; // Replace with your real Paystack public key
+  const publicKey = "pk_live_f99a4060a01d3d525e695ec18c5c5780435e0e23";
   const [paystackLoaded, setPaystackLoaded] = useState(false);
 
   useEffect(() => {
@@ -18,7 +19,7 @@ const PaystackCheckout = ({ email, amount, phoneNumber, deliveryAddress, isDisab
   }, []);
 
   const handlePayment = () => {
-    if (!paystackLoaded || !window.PaystackPop) {
+    if (typeof window === 'undefined' || !paystackLoaded || !window.PaystackPop) {
       alert("Paystack is still loading, please try again...");
       return;
     }
@@ -26,20 +27,12 @@ const PaystackCheckout = ({ email, amount, phoneNumber, deliveryAddress, isDisab
     const handler = window.PaystackPop.setup({
       key: publicKey,
       email,
-      amount: amount * 100, // Convert to kobo
+      amount: amount * 100,
       currency: "NGN",
       metadata: {
         custom_fields: [
-          {
-            display_name: "Phone Number",
-            variable_name: "phone_number",
-            value: phoneNumber,
-          },
-          {
-            display_name: "Delivery Address",
-            variable_name: "delivery_address",
-            value: deliveryAddress,
-          },
+          { display_name: "Phone Number", variable_name: "phone_number", value: phoneNumber },
+          { display_name: "Delivery Address", variable_name: "delivery_address", value: deliveryAddress },
         ],
       },
       callback: function (response) {
@@ -63,6 +56,14 @@ const PaystackCheckout = ({ email, amount, phoneNumber, deliveryAddress, isDisab
       {paystackLoaded ? "Pay Now" : "Loading..."}
     </button>
   );
+};
+
+PaystackCheckout.propTypes = {
+  email: PropTypes.string.isRequired,
+  amount: PropTypes.number.isRequired,
+  phoneNumber: PropTypes.string,
+  deliveryAddress: PropTypes.string,
+  isDisabled: PropTypes.bool,
 };
 
 export default PaystackCheckout;

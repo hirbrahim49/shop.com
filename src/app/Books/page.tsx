@@ -2,9 +2,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { data } from "../../../data/products"; // Importing the correct data variable
+import Image from "next/image";
 import { useCart } from "../Context/cartContext";
 import { Product } from "../../../data/products";
-const page = () => {
+const Page = () => {
     const { addToCart } = useCart();
     // Add to cart handler function
     const handleAddToCart = (product: Product) => {
@@ -58,11 +59,7 @@ const page = () => {
                 }}
               >
                 <div className="relative overflow-hidden">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-64 object-cover transition-transform transform group-hover:scale-110"
-                  />
+                <Image src={product.image} alt={product.name} width={320} height={256} className="object-cover w-full h-64"/>
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition duration-300"></div>
                 </div>
                 <div className="p-6">
@@ -92,4 +89,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -40,7 +40,7 @@ const AboutUs = () => {
               <div className="bg-white rounded-lg shadow-lg p-8 text-center">
                 <div className="text-4xl mb-4">📞</div>
                 <h3 className="text-xl font-semibold text-gray-800">24/7 Support</h3>
-                <p className="text-gray-600">We're here for you anytime, any day.</p>
+                <p className="text-gray-600">We are here for you anytime, any day.</p>
               </div>
             </div>
           </section>
