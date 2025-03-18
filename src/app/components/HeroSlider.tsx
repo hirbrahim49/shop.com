@@ -4,7 +4,7 @@ import React from "react";
 import Slider from "react-slick";
 import Image from "next/image";
 import { HeroDataBase } from "../Data/HeroData";
-import Link from "next/link";
+
 
 const slideVariants = {
   hidden: { opacity: 0, y: 50 },
