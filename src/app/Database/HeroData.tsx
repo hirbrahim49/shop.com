@@ -48,7 +48,7 @@ interface DataItem {
     },
     {
       id: 3,
-      image: "/Images/books.jpg",
+      image: "/Images/Books.jpg",
       h1: "Books & Stationery",
       rating: 4,
     },
