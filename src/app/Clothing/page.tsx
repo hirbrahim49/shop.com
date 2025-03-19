@@ -2,7 +2,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { data } from "../data/products";
-import { useCart } from "../Context/cartContext";
 import ProductCard from "../components/ProductCard"; // Adjust the import path
 
 const Page = () => {
