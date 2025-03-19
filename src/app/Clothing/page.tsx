@@ -31,6 +31,14 @@ const Page = () => {
           Discover a blend of elegance and comfort. Explore a curated collection
           that fits your style and personality.
         </motion.h2>
+
+                {/* Latest Section */}
+                <div className="mt-16 text-left mx-auto max-w-[95%]">
+          <h1 className="text-4xl font-serif font-bold text-orange-800">
+            Latest Clothing Available For Sale
+          </h1>
+          <div className="bg-orange-500 w-[60%] h-[2px] my-6"></div>
+        </div>
       </section>
 
       {/* Product Section */}

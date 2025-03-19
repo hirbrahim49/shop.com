@@ -5,8 +5,8 @@ import { data } from "../data/products";
 import ProductCard from "../components/ProductCard"; // Adjust the import path
 
 const Page = () => {
-  const clothingProducts = data.find(
-    (category) => category.category === "Clothing & Fashion"
+  const healthproduct = data.find(
+    (category) => category.category === "Health & Beauty"
   )?.products;
 
   return (
@@ -31,13 +31,22 @@ const Page = () => {
          Enhance your beauty and wellness with our premium products.
 
         </motion.h2>
+        
+                {/* Latest Section */}
+                <div className="mt-16 text-left mx-auto max-w-[95%]">
+          <h1 className="text-4xl font-serif font-bold text-orange-800">
+            Latest health product Available For Sale
+          </h1>
+          <div className="bg-orange-500 w-[60%] h-[2px] my-6"></div>
+        </div>
+
       </section>
 
       {/* Product Section */}
       <section className="py-8 px-4 w-[90%] mx-auto">
         <div className="flex flex-wrap justify-center gap-10">
-          {clothingProducts && clothingProducts.length > 0 ? (
-            clothingProducts.map((product) => (
+          {healthproduct && healthproduct.length > 0 ? (
+            healthproduct.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))
           ) : (

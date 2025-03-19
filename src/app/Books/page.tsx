@@ -5,8 +5,8 @@ import { data } from "../data/products";
 import ProductCard from "../components/ProductCard";
 
 const Page = () => {
-  const clothingProducts = data.find(
-    (category) => category.category === "Clothing & Fashion"
+  const booksproduct = data.find(
+    (category) => category.category === "Books & Stationery"
   )?.products;
 
   return (
@@ -30,13 +30,21 @@ const Page = () => {
         >
          Explore our collection of books and stationery to fuel your creativity.
         </motion.h2>
+
+                {/* Latest Section */}
+                <div className="mt-16 text-left mx-auto max-w-[95%]">
+          <h1 className="text-4xl font-serif font-bold text-orange-800">
+            Latest Books Available For Sale
+          </h1>
+          <div className="bg-orange-500 w-[60%] h-[2px] my-6"></div>
+        </div>
       </section>
 
       {/* Product Section */}
       <section className="py-8 px-4 w-[90%] mx-auto">
         <div className="flex flex-wrap justify-center gap-10">
-          {clothingProducts && clothingProducts.length > 0 ? (
-            clothingProducts.map((product) => (
+          {booksproduct && booksproduct.length > 0 ? (
+            booksproduct.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))
           ) : (
