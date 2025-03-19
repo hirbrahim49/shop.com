@@ -3,15 +3,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import { data } from "../data/products";
 import { useCart } from "../Context/cartContext";
-import { Product } from "../data/products";
+import ProductCard from "../components/Productcard";// Adjust the import path
+
 const Page = () => {
-
-      const { addToCart } = useCart();
-      // Add to cart handler function
-      const handleAddToCart = (product: Product) => {
-        addToCart(product); // Adds the selected product to the cart
-      }; 
-
   const foodStuffProducts = data.find(
     (category) => category.category === "Food Stuff"
   )?.products;
@@ -49,42 +43,7 @@ const Page = () => {
         <div className="flex flex-wrap justify-center gap-10">
           {foodStuffProducts &&
             foodStuffProducts.map((product) => (
-              <div
-                key={product.id}
-                className="group bg-white shadow-xl rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl"
-                style={{
-                  width: "320px",
-                  height: "480px",
-                }}
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-64 object-cover transition-transform transform group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition duration-300"></div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-800 group-hover:text-orange-600 transition duration-300">
-                    {product.name}
-                  </h3>
-                  <p className="text-sm text-gray-500 mt-2">{product.description}</p>
-                  <div className="flex justify-between items-center mt-6">
-                    <span className="text-orange-600 font-bold text-lg">
-                      ₦{product.price.toFixed(2)}
-                    </span>
-                    <span className="text-yellow-500 text-sm">
-                      ⭐ {product.rating}
-                    </span>
-                  </div>
-                  <button 
-                   onClick={() => handleAddToCart(product)} // Pass product to addToCart
-                  className="bg-orange-600 text-white py-2 mt-4 w-full rounded-lg hover:bg-orange-500 transition duration-300">
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
+              <ProductCard key={product.id} product={product} />
             ))}
         </div>
       </section>

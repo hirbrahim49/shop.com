@@ -10,6 +10,7 @@ interface DataItem {
    image: string; // Path to the image
    h1: string; // Title of the category
    rating: number; // Rating out of 5
+   slug:string;
  }
  
  
@@ -38,33 +39,39 @@ interface DataItem {
       id: 1,
       image: "/Images/clothes.jpg",
       h1: "Clothing & Fashion",
-      rating: 4.5,
+      rating: 5,
+      slug: "Clothing"
     },
     {
       id: 2,
       image: "/Images/electronic.jpg",
       h1: "Electronics",
-      rating: 3.8,
+      rating: 5 ,
+      slug: "Electronics"
     },
     {
       id: 3,
       image: "/Images/Books.jpg",
       h1: "Books & Stationery",
-      rating: 4,
+      rating: 5,
+      slug: "Books"
     },
     {
       id: 4,
       image: "/Images/beauty.jpg",
       h1: "Health & Beauty",
       rating: 5,
+      slug: "Beauty"
     },
     {
       id: 5,
       image: "/Images/food.jpg",
       h1: "Food Stuff",
-      rating: 3.2,
-    },
+      rating: 5,
+      slug: "Food"
+    }
   ];
+  
   interface HeroProduct {
    id: number;
    name: string;

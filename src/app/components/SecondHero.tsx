@@ -37,12 +37,13 @@ const SecondHero = () => {
                   {category.h1}
                 </h1>
                 <div className="flex justify-between items-center">
-                  <Link
-                    href="/Clothing"
+                 <Link
+                   href={`/${category.slug}`}
                     className="px-4 py-2 bg-orange-500 text-white text-sm font-medium rounded-md shadow hover:bg-orange-600 hover:shadow-lg transition duration-300 transform hover:scale-105"
                   >
-                    Shop Now
+                   Shop Now
                   </Link>
+
                   <div className="flex text-orange-500 space-x-1">
                     {Array(5)
                       .fill(0)
