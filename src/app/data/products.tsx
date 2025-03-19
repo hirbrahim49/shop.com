@@ -19,7 +19,7 @@ export const data: Category[] = [
           "id": "1",
           "name": "Net Shirt",
           "price": 100, 
-          "image": "/Images/Net cloth.jpg",
+          "image": "/Images/Net Cloth.jpg",
           "description": "Soft cotton T-shirt available in multiple colors.",
           "rating": 4.5
         },
